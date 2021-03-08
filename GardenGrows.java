@@ -79,14 +79,9 @@ class GardenPanel extends JPanel implements MouseListener, KeyListener
 			g.fillRect(70, 70, 930, 430);
 			if(sun == true && watered == true)
 			{
+				percentClicked = true;
 				g.setColor(Color.YELLOW);
-				for(int row = 70; row < 1000; row += 200)
-				{
-					for(int col = 70; col < 500; row += 200)
-					{
-						g.fillOval(row, col, 50, 50);
-					}
-				}
+				g.fillOval(100, 100, 100, 100);
 			}
 			else if(percentClicked == true)
 			{
@@ -96,12 +91,12 @@ class GardenPanel extends JPanel implements MouseListener, KeyListener
 					{
 						for(int j = 70; j <= 500; j += 200)
 						{
-							g.setColor(color);
-							g.fillOval(f, j, 50, 50);
-							g.setColor(Color.YELLOW);
-							g.fillOval(f, j, 100, 100);
+							//g.setColor(color);
+							//g.fillOval(f, j, 50, 50);
 							g.setColor(Color.GREEN);
 							g.fillRect(f, j, f+900, j+400);
+							g.setColor(color.BLUE);
+							g.fillOval(f, j, 50, 50);
 						}
 					}
 				}
@@ -160,7 +155,7 @@ class GardenPanel extends JPanel implements MouseListener, KeyListener
 				keyClear = true;
 			else if(code == KeyEvent.VK_UP)
 				upArrow = true;
-			//repaint(); 
+			repaint(); 
 		}
 		public void keyReleased(KeyEvent evt) {}
 		public void keyTyped(KeyEvent evt)
@@ -177,6 +172,6 @@ class GardenPanel extends JPanel implements MouseListener, KeyListener
 			{
 				upArrow = true;
 			} 
-			//repaint(); 
+			repaint(); 
 		}
 }
